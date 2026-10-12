@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bravartis - Manualidades & Arte con Alma</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            600: '#db2777',
+                            800: '#be185d',
+                            900: '#831843'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Tus estilos personalizados -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .craft-grid-bg {
+            background-color: #fbf7fc;
+            background-image: 
+                linear-gradient(to right, rgba(243, 218, 233, 0.4) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(243, 218, 233, 0.4) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        /* 🌈 Animación fluida para textos con gradientes */
+        .animated-gradient-text {
+            background: linear-gradient(-45deg, #ec4899, #8b5cf6, #3b82f6, #ec4899);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 6s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* ✨ Efecto Flotante Suave */
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(1deg); }
+            50% { transform: translateY(-8px) rotate(-1deg); }
+        }
+
+        /* 💖 Resplandor Rosa y Azul */
+        .glow-card {
+            box-shadow: 0 0 25px rgba(236, 72, 153, 0.3), 0 0 15px rgba(59, 130, 246, 0.2);
+        }
+    </style>
+</head>
+<body class="craft-grid-bg min-h-screen text-gray-800 font-sans antialiased flex flex-col justify-between">
+
+    <div>
+        <!-- 🌟 Barra Superior de Anuncios -->
+        <div class="bg-gradient-to-r from-pink-500 to-blue-600 text-white text-xs sm:text-sm font-medium py-2 px-4 text-center shadow-sm tracking-wide">
+    ✨ 🎁 Envíos a todo el país • Diseños hechos a mano con amor • ¡Regalos especiales en cada pedido! ✂️ 🌟
+</div>
+
+        <!-- 🧭 Navbar Principal -->
+        <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <!-- Logo oficial más grande -->
+            <a href="index.html" class="flex items-center space-x-3 group">
+                <img src="images/logo.png" alt="Bravartis Logo" class="h-[100px] w-auto object-contain transform group-hover:scale-105 transition duration-300 drop-shadow-sm">
+            </a>
+
+            <!-- Buscador central -->
+            <div class="hidden md:flex flex-1 max-w-md mx-8">
+                <div class="relative w-full">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-pink-400">
+                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </span>
+                    <input type="text" id="search-input" placeholder="Buscar amigurumis, hilos, bastidores..." class="w-full pl-10 pr-4 py-2 bg-white/80 border border-pink-200 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-pink-400 shadow-inner">
+                </div>
+            </div>
+
+            <!-- Acciones: Auth y Carrito -->
+            <div class="flex items-center space-x-3">
+                <!-- Contenedor dinámico de sesión (Login/Registro/Admin) -->
+                <div id="auth-nav-container"></div>
+
+                <!-- Botón Carrito -->
+                <button id="cart-toggle-btn" class="relative flex items-center space-x-2 bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-full shadow-md transition transform hover:scale-105 cursor-pointer">
+                    <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                    <span class="font-semibold text-sm">Mi Carrito</span>
+                    <span id="cart-badge" class="absolute -top-1 -right-1 bg-white text-pink-600 font-black text-xs px-2 py-0.5 rounded-full shadow transition-all duration-300 opacity-0 scale-75">0</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- 🌸 Hero Section Estilo Bravartis -->
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Columna de Texto con Gradientes Animados -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-white/90 border border-pink-200 px-4 py-1.5 rounded-full shadow-xs">
+                        <span class="text-pink-500">✂️</span>
+                        <span class="text-xs sm:text-sm font-semibold text-gray-700 tracking-wide">Manualidades & Arte con Alma</span>
+                    </div>
+
+                    <!-- Título con animación de gradiente -->
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 leading-tight">
+                        Creaciones únicas en <br class="hidden sm:inline">
+                        <span class="animated-gradient-text">Crochet, Bordados & Pintura</span> 🎨
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-gray-600 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        En Bravartis transformamos hilos, telas y pinceles en piezas especiales tejidas a mano. Explora nuestro catálogo listo para enviar o cotiza tu diseño personalizado.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#tienda" class="w-full sm:w-auto bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white font-bold px-8 py-3.5 rounded-full shadow-lg shadow-pink-200 transition transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-2">
+                            <span>Ver Tienda</span>
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#contacto" class="w-full sm:w-auto bg-white hover:bg-pink-50 text-pink-600 border-2 border-pink-200 font-bold px-8 py-3.5 rounded-full shadow-sm transition transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-2">
+                            <span>🪄 Pedir Encargo Especial</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Columna de Tarjeta Destacada con Cuadrícula Azul y Logo Transparente -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md bg-white p-4 rounded-3xl glow-card border-4 border-white animate-float">
+                        <!-- Cuadro Azul con Cuadrícula visible por detrás del logo -->
+                        <div class="bg-blue-600 rounded-2xl p-8 flex flex-col items-center justify-center text-center shadow-inner relative overflow-hidden min-h-[280px]" style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0.15) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 1px, transparent 1px); background-size: 20px 20px;">
+                            
+                            <!-- Logo oficial transparente flotando sobre la cuadrícula -->
+                            <div class="p-2 transition transform hover:scale-105 duration-300">
+                                <img src="images/logo.png" alt="Bravartis Emblem" class="w-52 sm:w-60 h-auto mx-auto drop-shadow-2xl">
+                            </div>
+
+                        </div>
+                        <div class="pt-4 pb-2 px-2 text-center">
+                            <p class="text-xs font-bold text-pink-600 tracking-wide flex items-center justify-center gap-2">
+                                ✂️ Crochet • Bordado • Pintura • Kits DIY
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 🛍️ Catálogo y Filtros -->
+            <section id="tienda" class="mt-20">
+                <div class="flex flex-col sm:flex-row items-center justify-between mb-8 gap-4">
+                    <h2 class="text-2xl sm:text-3xl font-black text-gray-800">
+                        Catálogo Destacado <span class="animated-gradient-text">🧶</span>
+                    </h2>
+                    <!-- Filtros de Categoría -->
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <button class="filter-btn bg-brand-800 text-white px-4 py-2 rounded-xl text-xs font-bold transition shadow-sm" data-category="all">Todos</button>
+                        <button class="filter-btn bg-white text-gray-600 px-4 py-2 rounded-xl text-xs font-bold border border-pink-200 transition shadow-sm" data-category="crochet">Crochet</button>
+                        <button class="filter-btn bg-white text-gray-600 px-4 py-2 rounded-xl text-xs font-bold border border-pink-200 transition shadow-sm" data-category="bordados">Bordados</button>
+                        <button class="filter-btn bg-white text-gray-600 px-4 py-2 rounded-xl text-xs font-bold border border-pink-200 transition shadow-sm" data-category="pintura">Pintura</button>
+                    </div>
+                </div>
+                
+                <!-- Grilla conectada a PostgreSQL -->
+                <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Se cargan automáticamente vía catalog.js -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- 🛒 DRAWER / CAJÓN DEL CARRITO -->
+    <div id="cart-drawer-overlay" class="fixed inset-0 bg-black/50 z-50 opacity-0 pointer-events-none transition-opacity duration-300 backdrop-blur-xs"></div>
+    <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col justify-between">
+        <div class="p-6 border-b flex items-center justify-between bg-brand-50/50">
+            <h3 class="font-black text-lg text-gray-800 flex items-center gap-2">
+                <i data-lucide="shopping-bag" class="w-5 h-5 text-brand-800"></i> Tu Carrito
+            </h3>
+            <button id="close-cart-btn" class="text-gray-400 hover:text-gray-700 p-1 font-bold">✕</button>
+        </div>
+        
+        <div id="cart-items-container" class="p-6 overflow-y-auto flex-grow space-y-4">
+            <!-- Items del carrito -->
+        </div>
+
+        <div class="p-6 border-t bg-gray-50 space-y-4">
+            <div class="flex justify-between items-center">
+                <span class="font-bold text-gray-600">Total a pagar:</span>
+                <span id="cart-total-price" class="font-black text-2xl text-brand-800">$0</span>
+            </div>
+            <button id="checkout-btn" class="w-full bg-brand-800 hover:bg-brand-900 text-white font-bold py-3.5 rounded-2xl shadow-lg transition-all flex items-center justify-center gap-2">
+                Proceder al Pago Seguramente <i data-lucide="lock" class="w-4 h-4"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- 🍞 Toast de Notificación -->
+    <div id="toast" class="fixed bottom-6 right-6 bg-gray-900 text-white px-5 py-3 rounded-2xl shadow-2xl transform translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center gap-3 text-sm font-medium">
+        <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400"></i>
+        <span id="toast-message"></span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-6 text-center text-xs text-gray-500 border-t border-pink-100 bg-white/40 mt-16">
+        Bravartis • E-commerce con PostgreSQL & Node.js
+    </footer>
+
+    <!-- Scripts del Sistema -->
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/catalog.js"></script>
+    <script src="scripts/checkout.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

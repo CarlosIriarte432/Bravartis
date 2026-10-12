@@ -1,0 +1,63 @@
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #F8F3FF;
+}
+
+.font-display {
+    font-family: 'Fredoka', cursive, sans-serif;
+}
+
+/* Cutting Mat / Measurement Paper Background Pattern */
+.cutting-mat-bg {
+    background-color: #F8F3FF;
+    background-size: 24px 24px, 24px 24px, 120px 120px, 120px 120px;
+    background-image: 
+        linear-gradient(to right, rgba(18, 75, 227, 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(18, 75, 227, 0.08) 1px, transparent 1px),
+        linear-gradient(to right, rgba(255, 79, 167, 0.15) 1.5px, transparent 1.5px),
+        linear-gradient(to bottom, rgba(255, 79, 167, 0.15) 1.5px, transparent 1.5px);
+}
+
+.hero-board-bg {
+    background-color: #124BE3;
+    background-size: 20px 20px;
+    background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+}
+
+/* Custom Floating Animations */
+@keyframes floatSlow {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(3deg); }
+}
+
+.animate-float {
+    animation: floatSlow 4s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #F5ECFF;
+}
+::-webkit-scrollbar-thumb {
+    background: #FF4FA7;
+    border-radius: 9999px;
+}
+
+/* 🌸🌊 Gradiente limpio de Rosado a Azul (50/50) con animación suave */
+.animated-gradient-text {
+    background: linear-gradient(90deg, #ec4899 0%, #3b82f6 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 4s ease infinite alternate;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
